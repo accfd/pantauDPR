@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "nama": "Puan Maharani",
+    "jabatan": "Ketua DPR RI",
+    "fraksi": "PDI-P",
+    "dapil": "Jawa Tengah VII",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 2,
+    "nama": "Sufmi Dasco Ahmad",
+    "jabatan": "Wakil Ketua DPR RI",
+    "fraksi": "Gerindra",
+    "dapil": "Banten III",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 3,
+    "nama": "Saan Mustopa",
+    "jabatan": "Wakil Ketua DPR RI",
+    "fraksi": "NasDem",
+    "dapil": "Jawa Timur X",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 4,
+    "nama": "Adies Kadir",
+    "jabatan": "Wakil Ketua DPR RI",
+    "fraksi": "Golkar",
+    "dapil": "Jawa Timur VI",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 5,
+    "nama": "Cucun Ahmad Syamsurijal",
+    "jabatan": "Wakil Ketua DPR RI",
+    "fraksi": "PKB",
+    "dapil": "Banten I",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 6,
+    "nama": "Pramono Anung",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PDI-P",
+    "dapil": "Jawa Timur III",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 7,
+    "nama": "Hendrawan Supratikno",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Golkar",
+    "dapil": "Jawa Barat II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 8,
+    "nama": "Fadli Zon",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Gerindra",
+    "dapil": "Lampung II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 9,
+    "nama": "Hadi Mulyadi",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PKS",
+    "dapil": "Kalimantan Timur",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 10,
+    "nama": "Luluk Nur Hamidah",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PKB",
+    "dapil": "Jawa Timur IX",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 11,
+    "nama": "Ridwan Hisjam",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Golkar",
+    "dapil": "Jawa Timur VIII",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 12,
+    "nama": "Hendri Satrio",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "NasDem",
+    "dapil": "DKI Jakarta II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 13,
+    "nama": "Desy Ratnasari",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Golkar",
+    "dapil": "Jawa Barat VI",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 14,
+    "nama": "Teten Masduki",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PDI-P",
+    "dapil": "Jawa Barat IX",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 15,
+    "nama": "Reni Marlinawati",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Gerindra",
+    "dapil": "Jawa Tengah II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 16,
+    "nama": "Eko Patrio",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PKS",
+    "dapil": "Banten II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 17,
+    "nama": "Zulkifli Hasan",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PAN",
+    "dapil": "Lampung I",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 18,
+    "nama": "Said Abdullah",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PKB",
+    "dapil": "Sumatera Barat III",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 19,
+    "nama": "Nurhayati Ali Assegaf",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PDIP",
+    "dapil": "Jawa Timur II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 20,
+    "nama": "Ahmad Riza Patria",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Gerindra",
+    "dapil": "DKI Jakarta II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 21,
+    "nama": "Hidayat Nur Wahid",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "PKS",
+    "dapil": "DKI Jakarta III",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 22,
+    "nama": "Grace Natalie",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "NasDem",
+    "dapil": "Lampung II",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 23,
+    "nama": "Rachmat Gobel",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "NasDem",
+    "dapil": "Sulawesi Utara",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 24,
+    "nama": "Dede Yusuf",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Demokrat",
+    "dapil": "Jawa Barat VI",
+    "foto": "/potoDPR.png"
+  },
+  {
+    "id": 25,
+    "nama": "Hendrawan Supratikno",
+    "jabatan": "Anggota DPR RI",
+    "fraksi": "Golkar",
+    "dapil": "Jawa Barat II",
+    "foto": "/potoDPR.png"
+  }
+]

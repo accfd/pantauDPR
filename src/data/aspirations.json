@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "title": "Investigasi Kasus Kekerasan",
+    "category": ["Politik", "HAM"],
+    "description": "Membentuk tim investigasi untuk menyelidiki kasus Affan Kurniawan dan korban kekerasan lainnya selama protes 28–30 Agustus 2025 secara transparan.",
+    "likes": 128457
+  },
+  {
+    "id": 2,
+    "title": "Penarikan TNI Sipil",
+    "category": ["Politik", "HAM"],
+    "description": "Menarik TNI dari penugasan sipil dan memastikan tidak ada kriminalisasi terhadap demonstran.",
+    "likes": 114230
+  },
+  {
+    "id": 3,
+    "title": "Pembekuan Gaji DPR",
+    "category": ["Politik", "Ekonomi"],
+    "description": "Membekukan kenaikan gaji dan tunjangan anggota DPR serta membatalkan fasilitas baru (termasuk pensiun).",
+    "likes": 97250
+  },
+  {
+    "id": 4,
+    "title": "Transparansi Dana DPR",
+    "category": ["Politik", "Ekonomi"],
+    "description": "Menerbitkan laporan penggunaan dana secara transparan.",
+    "likes": 88540
+  },
+  {
+    "id": 5,
+    "title": "Investigasi Skandal DPR",
+    "category": ["Politik", "HAM"],
+    "description": "Meminta Badan Kehormatan DPR untuk menyelidiki anggota yang terlibat skandal.",
+    "likes": 73600
+  },
+  {
+    "id": 6,
+    "title": "Pemberhentian Kader Partai",
+    "category": ["Politik"],
+    "description": "Memberhentikan kader yang tidak etis di DPR dan mengumumkan komitmen politik untuk berpihak pada rakyat.",
+    "likes": 65400
+  },
+  {
+    "id": 7,
+    "title": "Dialog Kader Mahasiswa",
+    "category": ["Politik"],
+    "description": "Mengajak kader untuk berdialog dengan mahasiswa dan organisasi sipil.",
+    "likes": 58730
+  },
+  {
+    "id": 8,
+    "title": "Pembebasan Demonstran Ditahan",
+    "category": ["Politik", "HAM"],
+    "description": "Membebaskan semua demonstran yang ditahan dan memastikan tidak ada kriminalisasi.",
+    "likes": 142350
+  },
+  {
+    "id": 9,
+    "title": "Penghentian Kekerasan Polri",
+    "category": ["Politik", "HAM"],
+    "description": "Menghentikan kekerasan dan mengikuti prosedur standar dalam pengendalian massa.",
+    "likes": 128400
+  },
+  {
+    "id": 10,
+    "title": "Pengadilan Polri Pelanggar",
+    "category": ["Politik", "HAM"],
+    "description": "Menangkap dan mengadili anggota dan komandan yang terlibat dalam pelanggaran HAM.",
+    "likes": 112500
+  },
+  {
+    "id": 11,
+    "title": "TNI Kembali Barak",
+    "category": ["Politik", "HAM"],
+    "description": "Kembali ke barak dan menghentikan keterlibatan dalam penegakan hukum sipil.",
+    "likes": 98000
+  },
+  {
+    "id": 12,
+    "title": "Disiplin Internal TNI",
+    "category": ["Politik", "HAM"],
+    "description": "Menjaga disiplin internal dan tidak mencampuri urusan kepolisian.",
+    "likes": 88000
+  },
+  {
+    "id": 13,
+    "title": "Komitmen Publik TNI",
+    "category": ["Politik", "HAM"],
+    "description": "Berkomitmen secara publik untuk tidak terlibat dalam ruang sipil selama krisis demokrasi.",
+    "likes": 85000
+  },
+  {
+    "id": 14,
+    "title": "Upah Layak Pekerja",
+    "category": ["Ekonomi"],
+    "description": "Menjamin upah layak bagi seluruh pekerja di Indonesia.",
+    "likes": 132450
+  },
+  {
+    "id": 15,
+    "title": "Mencegah PHK Massal",
+    "category": ["Ekonomi"],
+    "description": "Mengambil langkah darurat untuk mencegah PHK massal dan melindungi pekerja kontrak.",
+    "likes": 125780
+  },
+  {
+    "id": 16,
+    "title": "Dialog Serikat Pekerja",
+    "category": ["Ekonomi"],
+    "description": "Membuka dialog dengan serikat pekerja.",
+    "likes": 114300
+  },
+  {
+    "id": 17,
+    "title": "Revisi Kebijakan Ekonomi",
+    "category": ["Ekonomi"],
+    "description": "Merevisi kebijakan sektor ekonomi dan ketenagakerjaan yang memberatkan rakyat.",
+    "likes": 108000
+  },
+  {
+    "id": 18,
+    "title": "Reformasi DPR",
+    "category": ["Politik"],
+    "description": "Melakukan pembersihan dan reformasi besar-besaran terhadap DPR.",
+    "likes": 95000
+  },
+  {
+    "id": 19,
+    "title": "Reformasi Partai Politik",
+    "category": ["Politik"],
+    "description": "Melakukan reformasi partai politik dan memperkuat pengawasan terhadap eksekutif.",
+    "likes": 87000
+  },
+  {
+    "id": 20,
+    "title": "Reformasi Perpajakan",
+    "category": ["Ekonomi"],
+    "description": "Menyusun rencana reformasi perpajakan yang lebih adil.",
+    "likes": 81000
+  },
+  {
+    "id": 21,
+    "title": "UU Perampasan Koruptor",
+    "category": ["Politik", "Hukum"],
+    "description": "Mengesahkan dan menegakkan Undang-Undang Perampasan Aset Koruptor.",
+    "likes": 83000
+  },
+  {
+    "id": 22,
+    "title": "Reformasi Kepolisian",
+    "category": ["Politik", "HAM"],
+    "description": "Melakukan reformasi kepemimpinan dan sistem di kepolisian agar profesional dan humanis.",
+    "likes": 78000
+  },
+  {
+    "id": 23,
+    "title": "TNI Kembali Barak LP",
+    "category": ["Politik", "HAM"],
+    "description": "Menarik TNI kembali ke barak tanpa pengecualian.",
+    "likes": 72000
+  },
+  {
+    "id": 24,
+    "title": "Penguatan Komnas HAM",
+    "category": ["Politik", "HAM"],
+    "description": "Memperkuat Komisi Nasional Hak Asasi Manusia dan lembaga pengawas independen.",
+    "likes": 69000
+  },
+  {
+    "id": 25,
+    "title": "Tinjauan Kebijakan Ekonomi",
+    "category": ["Ekonomi"],
+    "description": "Meninjau ulang kebijakan sektor ekonomi dan ketenagakerjaan.",
+    "likes": 65000
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "2024": [ 
+    {"bulan":"Januari","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Februari","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Maret","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"April","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Mei","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Juni","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Juli","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Agustus","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"September","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Oktober","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"November","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667},
+    {"bulan":"Desember","gaji_tunjangan":133333333333,"dana_legislasi":19775000000,"dana_reses_kunjungan":120833333333,"operasional_staf":4166666667,"biaya_badan":1979166667}
+  ],
+  "2025": [ 
+    {"bulan":"Januari","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Februari","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Maret","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"April","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Mei","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Juni","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Juli","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Agustus","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"September","gaji_tunjangan":140000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Oktober","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"November","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000},
+    {"bulan":"Desember","gaji_tunjangan":145000000000,"dana_legislasi":21000000000,"dana_reses_kunjungan":130000000000,"operasional_staf":4500000000,"biaya_badan":2100000000}
+  ]
+}

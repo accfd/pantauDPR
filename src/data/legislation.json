@@ -1,0 +1,22 @@
+[
+  { "id": 1, "judul": "RUU Perlindungan Data Pribadi", "status": "Disahkan", "tanggal": "2023-09-17", "komisi": "Komisi I" },
+  { "id": 2, "judul": "RUU Energi Baru Terbarukan", "status": "Dalam Pembahasan", "tanggal": "2024-02-10", "komisi": "Komisi VII" },
+  { "id": 3, "judul": "RUU Kesehatan Nasional", "status": "Disahkan", "tanggal": "2024-06-22", "komisi": "Komisi IX" },
+  { "id": 4, "judul": "RUU Pendidikan Tinggi", "status": "Ditolak", "tanggal": "2023-11-05", "komisi": "Komisi X" },
+  { "id": 5, "judul": "RUU Keadilan Iklim", "status": "Dalam Proses", "tanggal": "2025-03-01", "komisi": "Komisi IV" },
+  { "id": 6, "judul": "RUU Anti Korupsi", "status": "Disahkan", "tanggal": "2024-12-15", "komisi": "Komisi III" },
+  { "id": 7, "judul": "RUU Perlindungan Anak", "status": "Dalam Pembahasan", "tanggal": "2024-05-20", "komisi": "Komisi VIII" },
+  { "id": 8, "judul": "RUU Pertahanan Siber", "status": "Dalam Proses", "tanggal": "2025-04-01", "komisi": "Komisi I" },
+  { "id": 9, "judul": "RUU Lingkungan Hidup", "status": "Disahkan", "tanggal": "2023-08-11", "komisi": "Komisi IV" },
+  { "id": 10, "judul": "RUU Hak Pekerja Migran", "status": "Dalam Pembahasan", "tanggal": "2024-03-18", "komisi": "Komisi IX" },
+  { "id": 11, "judul": "RUU Tata Kelola AI", "status": "Dalam Proses", "tanggal": "2025-07-20", "komisi": "Komisi I" },
+  { "id": 12, "judul": "RUU Perlindungan Konsumen Digital", "status": "Dalam Pembahasan", "tanggal": "2024-10-09", "komisi": "Komisi VI" },
+  { "id": 13, "judul": "RUU Reforma Agraria", "status": "Disahkan", "tanggal": "2023-05-29", "komisi": "Komisi II" },
+  { "id": 14, "judul": "RUU Keadilan Gender", "status": "Ditolak", "tanggal": "2024-01-12", "komisi": "Komisi VIII" },
+  { "id": 15, "judul": "RUU Perlindungan Nelayan", "status": "Dalam Pembahasan", "tanggal": "2024-06-01", "komisi": "Komisi IV" },
+  { "id": 16, "judul": "RUU Kebebasan Pers", "status": "Dalam Proses", "tanggal": "2025-05-05", "komisi": "Komisi I" },
+  { "id": 17, "judul": "RUU Transparansi Anggaran Publik", "status": "Dalam Proses", "tanggal": "2025-06-10", "komisi": "Komisi XI" },
+  { "id": 18, "judul": "RUU Pendidikan Vokasi", "status": "Disahkan", "tanggal": "2023-07-22", "komisi": "Komisi X" },
+  { "id": 19, "judul": "RUU Kesehatan Jiwa", "status": "Dalam Pembahasan", "tanggal": "2024-09-14", "komisi": "Komisi IX" },
+  { "id": 20, "judul": "RUU Perdagangan Digital", "status": "Dalam Proses", "tanggal": "2025-08-01", "komisi": "Komisi VI" }
+]
