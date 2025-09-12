@@ -1,58 +1,53 @@
-// src/pages/ManageLegislation.jsx
+// src/pages/ManageBudget.jsx
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Sidebar from "../components/Sidebar";
-import legislationData from "../data/legislation.json";
+import budgetDataJson from "../data/budget.json";
 
-const statusColors = {
-  "Disahkan": "bg-green-200 text-green-800",
-  "Dalam Pembahasan": "bg-yellow-200 text-yellow-800",
-  "Ditolak": "bg-red-200 text-red-800",
-  "Dalam Proses": "bg-blue-200 text-blue-800",
-};
-
-export default function ManageLegislation() {
+export default function ManageBudget() {
   const location = useLocation();
 
-  // Scroll ke atas setiap kali route berubah
+  // Scroll ke atas saat navigasi berubah
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, [location]);
 
-  const [laws, setLaws] = useState(legislationData);
-  const [search, setSearch] = useState("");
+  const [budgetData, setBudgetData] = useState(budgetDataJson);
+  const [selectedYear, setSelectedYear] = useState(Object.keys(budgetData)[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingLaw, setEditingLaw] = useState(null);
+  const [editingMonth, setEditingMonth] = useState(null);
   const [formData, setFormData] = useState({
-    judul: "",
-    status: "Dalam Pembahasan",
-    tanggal: "",
-    komisi: "",
+    bulan: "",
+    tahun: "",
+    gaji_tunjangan: 0,
+    dana_legislasi: 0,
+    dana_reses_kunjungan: 0,
+    operasional_staf: 0,
+    biaya_badan: 0,
   });
+  const [notification, setNotification] = useState("");
 
-  const filteredLaws = laws.filter((law) =>
-    [law.judul, law.status, law.tanggal, law.komisi]
-      .join(" ")
-      .toLowerCase()
-      .includes(search.toLowerCase())
-  );
+  const monthList = [
+    "Januari","Februari","Maret","April","Mei","Juni",
+    "Juli","Agustus","September","Oktober","November","Desember"
+  ];
 
-  const openModal = (law = null) => {
-    setEditingLaw(law);
-    if (law) {
-      setFormData({
-        judul: law.judul,
-        status: law.status,
-        tanggal: law.tanggal,
-        komisi: law.komisi,
-      });
+  const yearList = Array.from({ length: 7 }, (_, i) => 2024 + i); // 2024–2030
+
+  const openModal = (month = null) => {
+    setEditingMonth(month);
+    if (month) {
+      setFormData({ ...month, tahun: selectedYear });
     } else {
       setFormData({
-        judul: "",
-        status: "Dalam Pembahasan",
-        tanggal: "",
-        komisi: "",
+        bulan: "",
+        tahun: yearList[0],
+        gaji_tunjangan: 0,
+        dana_legislasi: 0,
+        dana_reses_kunjungan: 0,
+        operasional_staf: 0,
+        biaya_badan: 0,
       });
     }
     setIsModalOpen(true);
@@ -60,32 +55,49 @@ export default function ManageLegislation() {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setEditingLaw(null);
+    setEditingMonth(null);
+  };
+
+  const showNotification = (msg) => {
+    setNotification(msg);
+    setTimeout(() => setNotification(""), 3000);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (editingLaw) {
-      setLaws((prev) =>
-        prev.map((law) =>
-          law.id === editingLaw.id ? { ...law, ...formData } : law
-        )
-      );
-    } else {
-      const newLaw = {
-        id: laws.length + 1,
-        ...formData,
-      };
-      setLaws((prev) => [newLaw, ...prev]);
+    const { bulan, tahun } = formData;
+
+    const yearBudget = budgetData[tahun] || [];
+    const exists = yearBudget.some(
+      (m) =>
+        m.bulan.toLowerCase() === bulan.trim().toLowerCase() &&
+        (!editingMonth || m.bulan !== editingMonth.bulan)
+    );
+
+    if (exists) {
+      showNotification(`Bulan "${bulan}" sudah ada di tahun ${tahun}.`);
+      return;
     }
+
+    const updatedMonths = editingMonth
+      ? yearBudget.map((m) => (m.bulan === editingMonth.bulan ? { ...formData } : m))
+      : [formData, ...yearBudget];
+
+    setBudgetData({ ...budgetData, [tahun]: updatedMonths });
+    setSelectedYear(tahun);
+    showNotification(editingMonth ? `Bulan "${bulan}" berhasil diupdate.` : `Bulan "${bulan}" berhasil ditambahkan.`);
     closeModal();
   };
 
-  const handleDelete = (id) => {
-    if (confirm("Apakah Anda yakin ingin menghapus RUU ini?")) {
-      setLaws((prev) => prev.filter((law) => law.id !== id));
+  const handleDelete = (bulan) => {
+    if (window.confirm(`Apakah Anda yakin ingin menghapus bulan ${bulan}?`)) {
+      const updatedMonths = budgetData[selectedYear].filter((m) => m.bulan !== bulan);
+      setBudgetData({ ...budgetData, [selectedYear]: updatedMonths });
+      showNotification(`Bulan "${bulan}" berhasil dihapus.`);
     }
   };
+
+  const years = Object.keys(budgetData);
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
@@ -95,31 +107,35 @@ export default function ManageLegislation() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl md:text-4xl font-bold text-green-900 mb-6"
+          className="text-3xl md:text-4xl font-bold text-green-900 mb-6"
         >
-          Kelola Legislasi / RUU
+          Kelola Anggaran DPR
         </motion.h1>
 
-        {/* Tambah & Search */}
+        {/* Tambah & Tahun */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4"
         >
-          <button
-            onClick={() => openModal()}
-            className="bg-green-900 text-yellow-100 px-4 py-2 rounded hover:bg-green-800 transition w-full sm:w-auto"
-          >
-            Tambah RUU
-          </button>
-          <input
-            type="text"
-            placeholder="Cari judul, status, tanggal, atau komisi..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="px-4 py-2 border rounded w-full sm:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-900"
-          />
+          <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto items-stretch">
+            <button
+              onClick={() => openModal()}
+              className="bg-green-900 text-yellow-100 px-4 py-2 rounded hover:bg-green-800 transition w-full sm:w-auto"
+            >
+              Tambah Anggaran DPR
+            </button>
+            <select
+              value={selectedYear}
+              onChange={(e) => setSelectedYear(e.target.value)}
+              className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900 w-full sm:w-auto"
+            >
+              {years.map((y) => (
+                <option key={y} value={y}>{y}</option>
+              ))}
+            </select>
+          </div>
         </motion.div>
 
         {/* Tabel */}
@@ -132,40 +148,40 @@ export default function ManageLegislation() {
           <table className="min-w-full divide-y divide-gray-200 table-auto">
             <thead className="bg-green-900 text-white">
               <tr>
-                <th className="px-4 py-2 text-left text-sm font-semibold">Judul RUU</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold">Status</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold">Tanggal</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold">Komisi</th>
+                <th className="px-4 py-2 text-left text-sm font-semibold">Bulan</th>
+                <th className="px-4 py-2 text-left text-sm font-semibold">Gaji & Tunjangan</th>
+                <th className="px-4 py-2 text-left text-sm font-semibold">Dana Legislasi</th>
+                <th className="px-4 py-2 text-left text-sm font-semibold">Dana Reses & Kunjungan</th>
+                <th className="px-4 py-2 text-left text-sm font-semibold">Operasional Staf</th>
+                <th className="px-4 py-2 text-left text-sm font-semibold">Biaya Badan</th>
                 <th className="px-4 py-2 text-left text-sm font-semibold">Aksi</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               <AnimatePresence>
-                {filteredLaws.map((law) => (
+                {(budgetData[selectedYear] || []).map((month) => (
                   <motion.tr
-                    key={law.id}
+                    key={month.bulan}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     className="hover:bg-green-50"
                   >
-                    <td className="px-4 py-2">{law.judul}</td>
-                    <td className="px-4 py-2">
-                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${statusColors[law.status] || "bg-gray-200 text-gray-800"}`}>
-                        {law.status}
-                      </span>
-                    </td>
-                    <td className="px-4 py-2">{law.tanggal}</td>
-                    <td className="px-4 py-2">{law.komisi}</td>
+                    <td className="px-4 py-2">{month.bulan}</td>
+                    <td className="px-4 py-2">{month.gaji_tunjangan.toLocaleString()}</td>
+                    <td className="px-4 py-2">{month.dana_legislasi.toLocaleString()}</td>
+                    <td className="px-4 py-2">{month.dana_reses_kunjungan.toLocaleString()}</td>
+                    <td className="px-4 py-2">{month.operasional_staf.toLocaleString()}</td>
+                    <td className="px-4 py-2">{month.biaya_badan.toLocaleString()}</td>
                     <td className="px-4 py-2 flex flex-wrap gap-2">
                       <button
-                        onClick={() => openModal(law)}
+                        onClick={() => openModal(month)}
                         className="bg-green-900 text-yellow-100 px-3 py-1 rounded hover:bg-green-800 transition flex-1 sm:flex-none"
                       >
                         Edit
                       </button>
                       <button
-                        onClick={() => handleDelete(law.id)}
+                        onClick={() => handleDelete(month.bulan)}
                         className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition flex-1 sm:flex-none"
                       >
                         Hapus
@@ -174,10 +190,10 @@ export default function ManageLegislation() {
                   </motion.tr>
                 ))}
               </AnimatePresence>
-              {filteredLaws.length === 0 && (
+              {(budgetData[selectedYear] || []).length === 0 && (
                 <tr>
-                  <td colSpan="5" className="px-4 py-4 text-center text-gray-500">
-                    Tidak ada RUU ditemukan.
+                  <td colSpan="7" className="px-4 py-4 text-center text-gray-500">
+                    Tidak ada data bulan
                   </td>
                 </tr>
               )}
@@ -185,7 +201,7 @@ export default function ManageLegislation() {
           </table>
         </motion.div>
 
-        {/* Modal Tambah/Edit */}
+        {/* Modal */}
         <AnimatePresence>
           {isModalOpen && (
             <motion.div
@@ -201,43 +217,73 @@ export default function ManageLegislation() {
                 className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg"
               >
                 <h2 className="text-xl font-bold text-green-900 mb-4">
-                  {editingLaw ? "Edit RUU" : "Tambah RUU"}
+                  {editingMonth ? "Edit Anggaran" : "Tambah Anggaran DPR"}
                 </h2>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                  <input
-                    type="text"
-                    placeholder="Judul RUU"
-                    value={formData.judul}
-                    onChange={(e) => setFormData({ ...formData, judul: e.target.value })}
-                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
-                    required
-                  />
-                  <input
-                    type="date"
-                    placeholder="Tanggal"
-                    value={formData.tanggal}
-                    onChange={(e) => setFormData({ ...formData, tanggal: e.target.value })}
-                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
-                    required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Komisi"
-                    value={formData.komisi}
-                    onChange={(e) => setFormData({ ...formData, komisi: e.target.value })}
-                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
-                    required
-                  />
                   <select
-                    value={formData.status}
-                    onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+                    value={formData.bulan}
+                    onChange={(e) => setFormData({ ...formData, bulan: e.target.value })}
                     className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
                   >
-                    <option value="Dalam Pembahasan">Dalam Pembahasan</option>
-                    <option value="Disahkan">Disahkan</option>
-                    <option value="Ditolak">Ditolak</option>
-                    <option value="Dalam Proses">Dalam Proses</option>
+                    <option value="" disabled>Pilih Bulan</option>
+                    {monthList.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
                   </select>
+
+                  <select
+                    value={formData.tahun}
+                    onChange={(e) => setFormData({ ...formData, tahun: e.target.value })}
+                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
+                  >
+                    <option value="" disabled>Pilih Tahun</option>
+                    {yearList.map((y) => (
+                      <option key={y} value={y}>{y}</option>
+                    ))}
+                  </select>
+
+                  <input
+                    type="number"
+                    placeholder="Gaji & Tunjangan"
+                    value={formData.gaji_tunjangan}
+                    onChange={(e) => setFormData({ ...formData, gaji_tunjangan: Number(e.target.value) })}
+                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Dana Legislasi"
+                    value={formData.dana_legislasi}
+                    onChange={(e) => setFormData({ ...formData, dana_legislasi: Number(e.target.value) })}
+                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Dana Reses & Kunjungan"
+                    value={formData.dana_reses_kunjungan}
+                    onChange={(e) => setFormData({ ...formData, dana_reses_kunjungan: Number(e.target.value) })}
+                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Operasional Staf"
+                    value={formData.operasional_staf}
+                    onChange={(e) => setFormData({ ...formData, operasional_staf: Number(e.target.value) })}
+                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Biaya Badan"
+                    value={formData.biaya_badan}
+                    onChange={(e) => setFormData({ ...formData, biaya_badan: Number(e.target.value) })}
+                    className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-900"
+                    required
+                  />
 
                   <div className="flex flex-col sm:flex-row justify-end gap-2 mt-4">
                     <button
@@ -251,7 +297,7 @@ export default function ManageLegislation() {
                       type="submit"
                       className="bg-green-900 text-yellow-100 px-4 py-2 rounded hover:bg-green-800 transition flex-1 sm:flex-none"
                     >
-                      {editingLaw ? "Simpan" : "Tambah"}
+                      {editingMonth ? "Simpan" : "Tambah"}
                     </button>
                   </div>
                 </form>
@@ -259,6 +305,17 @@ export default function ManageLegislation() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {notification && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-4 right-4 bg-green-900 text-yellow-100 px-4 py-2 rounded shadow-lg z-50"
+          >
+            {notification}
+          </motion.div>
+        )}
       </div>
     </div>
   );
