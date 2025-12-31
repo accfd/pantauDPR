@@ -1,12 +1,65 @@
-# React + Vite
+# PantauDPR 🏛️
+### Project: Get Invertor - Neo Telemetri
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Framework: Next.js](https://img.shields.io/badge/Framework-Next.js-black?logo=next.js)](https://nextjs.org/)
 
-Currently, two official plugins are available:
+**PantauDPR** adalah sebuah platform pemantauan publik yang dikembangkan sebagai bagian dari tugas **Get Invertor** di **Neo Telemetri**. Proyek ini bertujuan untuk menyajikan data anggota DPR RI secara transparan, interaktif, dan mudah diakses, sekaligus sebagai sarana eksplorasi pengembangan web modern.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 👨‍💻 Identitas Pengembang
+* **Nama:** Fuadi Dhiyaulhaq
+* **Username GitHub:** [@accfd](https://github.com/accfd)
+* **Tugas:** Get Invertor Neo Telemetri
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Fitur Utama
+* **Eksplorasi Data:** Menampilkan daftar anggota DPR RI dengan informasi yang terorganisir.
+* **Detail Anggota:** Informasi mendalam mengenai fraksi, komisi, dan daerah pemilihan (dapil).
+* **Visualisasi Distribusi:** Memudahkan pengguna melihat komposisi anggota berdasarkan partai.
+* **Navigasi Cepat:** Antarmuka yang intuitif untuk mencari data secara efektif.
+
+## 🛠️ Stack Teknologi
+Proyek ini dibangun menggunakan teknologi pilihan untuk performa yang optimal:
+* **Framework:** [Next.js](https://nextjs.org/) (React)
+* **Bahasa:** TypeScript / JavaScript
+* **Styling:** Tailwind CSS
+* **Deployment:** Vercel / GitHub Pages
+
+---
+
+## 📦 Cara Instalasi dan Menjalankan Proyek
+
+Pastikan Anda sudah menginstal **Node.js** di perangkat Anda.
+
+1.  **Clone Repositori**
+    ```bash
+    git clone [https://github.com/accfd/pantauDPR.git](https://github.com/accfd/pantauDPR.git)
+    cd pantauDPR
+    ```
+
+2.  **Instal Dependensi**
+    ```bash
+    npm install
+    ```
+
+3.  **Jalankan Server Pengembangan**
+    ```bash
+    npm run dev
+    ```
+    Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
+
+---
+
+## 📝 Catatan Tugas
+Proyek ini dikerjakan dengan fokus pada pemahaman struktur *frontend*, pengelolaan data melalui komponen, dan penerapan desain yang responsif sesuai dengan standar yang dipelajari di Neo Telemetri.
+
+---
+
+## 📄 Lisensi
+Proyek ini dibuat untuk keperluan tugas internal **Neo Telemetri**.
+
+---
+*Semangat belajar dan eksplorasi! Dibuat oleh Fuadi Dhiyaulhaq.*
